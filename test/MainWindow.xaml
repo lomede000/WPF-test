@@ -5,8 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Rechner 2000" HorizontalAlignment="Center" Height="450" Width="800"
+        KeyDown="Window_KeyDown">
+       
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+            <TextBlock 
+                   Text="Rechner"
+                   HorizontalAlignment="Center"
+                   x:Name="meintext"/>
+            <TextBlock
+                       Text="Ergebnis"
+                       Margin="20"
+                       HorizontalAlignment="Center"
+                x:Name="result"/>
+        </StackPanel>
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0"
+             Width="150"
+             Height="25"
+             Margin="0,0,10,0"
+             x:Name="numb1"/>
+
+            <ComboBox Grid.Column="1"
+              Width="60"
+              Height="25"
+              Margin="0"
+              x:Name="operatorBox">
+                <ComboBoxItem Content="+"/>
+                <ComboBoxItem Content="-"/>
+                <ComboBoxItem Content="*"/>
+                <ComboBoxItem Content="/"/>
+            </ComboBox>
+
+            <TextBox Grid.Column="2"
+             Width="150"
+             Height="25"
+             Margin="10,0,0,0"
+             x:Name="numb2"/>
+        </Grid>
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+
+            <Button 
+                Content="ok"
+                Click="Button_Click"
+                Width="150"
+                Height="20"
+                Margin="10"
+                IsDefault="True"/>
+
+            <Button 
+                Content="reset"
+                Click="Button_Clear"
+                Width="150"
+                Height="20"
+                Margin="10" />
+        </StackPanel>
     </Grid>
 </Window>
